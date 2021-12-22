@@ -1,4 +1,6 @@
 import React from 'react'
+import CheckBox from '@mui/material/Checkbox'
+import FormControlLabel from '@mui/material/FormControlLabel'
 
 export default function Todo({todo, toggleTodo}) {
     function handleTodoClick(){
@@ -6,8 +8,9 @@ export default function Todo({todo, toggleTodo}) {
     }
     return (
         <div>
-            <input type="checkbox" checked={todo.Status} onChange={handleTodoClick}/>
-            {todo.Name}
+            <FormControlLabel control={
+                <CheckBox sx={{fontSize: 35}} color="secondary" size='large' checked={todo.Status} onChange={handleTodoClick}/>
+            } label={todo.Name}/>
         </div>
     )
 }
