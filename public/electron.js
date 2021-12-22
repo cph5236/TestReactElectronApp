@@ -25,6 +25,7 @@ function createWindow() {
     webPreferences: {
       nodeIntegration: true
     }
+
   });
 
   // and load the index.html of the app.
@@ -34,6 +35,8 @@ function createWindow() {
       ? "http://localhost:3000"
       : `file://${path.join(__dirname, "../build/index.html")}`
   );
+
+  win.setMenu(null)//remove toolbar
 
   if (isDev) {
     installExtension(REACT_DEVELOPER_TOOLS)
